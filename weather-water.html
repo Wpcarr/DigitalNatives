@@ -7,9 +7,15 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="assets/js/script.js"></script>
+    
   </head>
   <body onload="GetData()">
-    <div class="chart-container">
+    <ul>
+      <li><a href="tab-1">Water</a></li>
+      <li><a href="tab-2">Weather</a></li>
+    </ul>
+    <div class="chart-container" id="tab-1">
+     
         <h2>Buffalo River Water Levels (Last 7 Days)</h2>
         <canvas id="chartjs-0" height="400"></canvas>
         <canvas id="chartjs-1" height="400"></canvas>
@@ -20,4 +26,23 @@
       <pre id="output1"></pre>
       <pre id="output2"></pre>
       <pre id="output3"></pre>
+      
+      <div id="tab-2">
+        <section class="form-container">
+        <h1>Weather Forecast</h1>
+        <form>
+          <label>Enter City Name
+              <input id="weather-location" type="text" value="Buffalo National River"/>
+          </label>
+          <div class="button-container">
+              <button type="button" onclick="getTemperature()">Display Temp</button>
+              <button type="button" onclick="clearForm()">Clear</button>
+          </div>
+      </form>
+      <section id="location-info"></section>
+      <div id="weather-table-container"></div>
+      <canvas id="weather-chart" style="width:100%;max-width:700px"></canvas>
+    </section>
+    </div>
+    <script src="assets/js/weather.js"></script>
   </body>
