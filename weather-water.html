@@ -10,13 +10,32 @@
     
   </head>
   <body onload="GetData()">
-    <ul>
-      <li><a href="tab-1">Water</a></li>
-      <li><a href="tab-2">Weather</a></li>
-    </ul>
-    <div class="chart-container" id="tab-1">
+    <header class="primary">
+      <nav class="secondary"><a href="https://www.facebook.com/@buffnatlriver/">Facebook</a><a href="https://www.instagram.com/explore/locations/278218715/the-buffalo-national-river/">Instagram</a><a href="weather-water.html">| Weather & Water Levels</a></nav>
+      <section class="wrapper container">
+         <h1><a href="index.html">Buffalo River Adventure Co</a></h1>
+         <nav class="nav" id="navbar">
+          <ul>
+            <li><a href="stay.html">Stay</a></li>
+            <li><a href="float.html">Float</a></li>
+            <li><a href="wildlife.html">Wildlife</a></li>
+            <li><a href="trails.html">Trail Info</a></li>
+            <li><a href="about.html" class="cta-button">About</a></li>
+          </ul>
+         </nav>
+      </section>
+      <h1>River Status Overview</h1>
+      <p>Before you hit the water or the trail, it's always a good idea to check latest Buffalo River water levels and weatherforecast-especially since conditions can change fast out here.</p>
+      <article>
+        <img src="assets/img/orange-kayak-bannersize.jpg" alt="orange-kayak">
+      </article>
+      <h2>About the River</h2>
+      <p>The Buffalo National River is rain-fed, so water levels vary with rainfall. Spring and early summer usually offer ideal floating conditions, but late summer can be too low in some areas. Always check river conditions before planning your float. </p>
+
+      <h2>Live Chart</h2>
+    <div class="chart-container">
      
-        <h2>Buffalo River Water Levels (Last 7 Days)</h2>
+        <h3>Buffalo River Water Levels (Last 7 Days)</h3>
         <canvas id="chartjs-0" height="400"></canvas>
         <canvas id="chartjs-1" height="400"></canvas>
         <canvas id="chartjs-2" height="400"></canvas>
