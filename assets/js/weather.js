@@ -30,24 +30,49 @@ let weatherChart;
             if (temperatures.length > 0) {
                 document.getElementById("location-info").innerHTML = json.results[0].name + ", " + json.results[0].admin1 + ", " + json.results[0].country + "<br/>Latitude = " + json.results[0].latitude + " - Longitude = " + json.results[0].longitude;
 
-                let weatherTable = "";
-                weatherTable = weatherTable + "<table><caption>7-Day Forecast: Hourly Temperature</caption><tr><th>Date</th><th>Temp</th></tr>";
+                let weatherTable = "<table><caption>7-Day Forecast: Hourly Temperature</caption><tr><th>Date</th><th>Temp</th></tr>";
+                
+                let now = Date.now();
+                let sevendays= now + 7 * 24 * 60 * 60 * 1000;
+
+                let dailytemps = {};
+
+                
                 for (let i = 0; i < temperatures.length; i++) {
                     // // Convert date to unix milliseconds
-                    let unixmillsec = Date.parse(times[i]);
+                    let tempstamp = Date.parse(times[i]);
+                    if ( tempstamp >= now && tempstamp <= sevendays) {
+                        let dateObj = new Date(tempstamp); 
+                        let hours = dateObj.getHours(); 
+                        let dayKey = dateObj.toDateString().split("T")[0];
+                        if ( hours === 12 && !dailytemps[dayKey]){
+                            dailytemps[dayKey] = {
+                                time : dateObj.toLocaleDateString(),
+                                temp: temperatures[i]
+                            }; 
+                        }
+
+                    }
+                } 
                     // // Create temporary date variable
-                    let tmpdate = new Date(unixmillsec);
+                    let timeFliter = [];
                     // // Extract the date/time string for a more friendly format
-                    times[i] = tmpdate.toLocaleString();
+                    let tempFliter = [];
+
+                    for (let key in dailytemps){
+                        timeFliter.push (dailytemps[key].time);
+                        tempFliter.push(dailytemps[key].temp);
+                    }
+
                     
-                    weatherTable = weatherTable + "<tr><td>" + times[i] + "</td><td>" + temperatures[i] + "</td></tr>";
-                }
-                weatherTable = weatherTable + "</table>"
+                weatherTable = weatherTable += "</table>"
                 weatherTableContainer.innerHTML = weatherTable;
                 weatherTableContainer.style.display = "block";
 
-                const xValues = times;
-                const yValues = temperatures;
+                if (weatherChart) {
+                    weatherChart.destroy();
+                }
+           
                 weatherChart = new Chart("weather-chart", {
                     type: "line",
                     data: {
