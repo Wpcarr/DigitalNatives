@@ -2,14 +2,9 @@
 
 /*------Color Scheme 
 
-#E9EBD3 - Light Stone
-EBEBEF - Light blueish stone
-#DAD0B7 - Beige
-#196FAA - Bright med blue
-#BFB304 - Yellow Green
-#8C8303 - Yellow Brown Pea
-#595302 - Greenish Brown
-#592B02 - Redish Brown
+#4b3520 - Dark Chocolate CTA Buttons
+#f2f2f2 - Light bg used for primary nav
+#4f4f4f - primary nav
 
 -----*/
 
@@ -17,31 +12,113 @@ EBEBEF - Light blueish stone
 :root {
     --body-text: #383737;
     --body-text-inverse: #EBEBEF;
-    --light-bg: #f2f2f2;
+    --light-bg: #fffcfc;
     --dark-bg: #416276;
-    --accent-color:#BFB304;
-    --accent-color-2: #592B02;
-    --dark-bg-opacity: rgba(78, 69, 126, 0.7);
-    --button-color: #3f95ce;
+    --cta-button-color:#4b3520;
+    --accent-color: #416276;
+    --dark-bg-opacity: rgba(2, 30, 1, 0.7);
     --standard-padding: 30px;
     --min-padding: 10px;
   }
 
-body {
-    max-width: 375px;
-    border: 3px solid;
-}
-
-#primary-hero {
-<<<<<<< HEAD
-    background-image: url(https://klmerritt44.github.io/it-pearl/mini-site/assets/img/canoe-fun.jpg);
-}
-
-
-
+  html {
+    color: var(--body-text);
+    font-size: 1em;
+    line-height: 1.5;
+    box-sizing: border-box;
+  }
   
-=======
+  *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+  
+    /* #region global styles ------------- */
+
+body {
+    /* DESIGN TIME CONTAINER */
+    max-width: 375px; 
+    border: 3px solid;
+    font-size: 1rem;
+    font-family: poppins;
+    background: var(--light-bg);
+    margin: 0px;
+    padding: 0px;
+}
+
+a {
+    color: var(--body-text);
+    text-decoration: none;
+  }
+
+a:hover {
+    text-decoration: underline;
+}
+
+  h1,h2,h3,h4 {
+    font-family: merriweather;
+   }
+  
+   h2 {
+    font-size: 2em;
+   }
+  
+   h3 {
+    font-size: 1.4em;
+   }
+
+   /* ---- This makes our images responsive but they still need to be optimized ----*/
+    img {
+        max-width: 100%;
+        height: auto;
+  }
+
+   /* #endregion global styles---------- */
+
+   /* #region utility ----------------*/
+
+   .container {
+    max-width: 900px;
+   }
+
+   .cta-button {
+    color: var(--body-text-inverse);
+    text-decoration: none;
+    background: var(--cta-button-color);
+    padding: 1em;
+    margin-top: 10px;
+   }
+
+   /* #endregion utility ------*/
+
+
+/* #region main css*/
+
+header.primary nav.secondary {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    column-gap: 1rem;
+    row-gap: 2rem;
+    width: 100%;
+    height: 2rem;
+    background: var(--dark-bg);
+    padding: 5px 10px;
+  }
+
+  nav.secondary a {
+    color: var(--body-text-inverse);
+    text-decoration: none;
+  }
+
+  header.primary nav ul li {
+    list-style-type: none;
+  }
+
+div#primary-hero {
     background-image: url(http://wpcarr.github.io/digital-natives/assets/img/canoe-fun.jpg);
 }
 
->>>>>>> 2a2fd7d5e972afcbcc4cb1b32a4df6a964439b40
+/* #endregion main css */
+
