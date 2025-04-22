@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buffalo River Concept</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="assets/js/script.js"></script>
+    
     
   </head>
   <body onload="GetData()">
@@ -24,6 +25,8 @@
           </ul>
          </nav>
       </section>
+    </header>
+      <section id="featured-grid" class="container">
       <h1>River Status Overview</h1>
       <p>Before you hit the water or the trail, it's always a good idea to check latest Buffalo River water levels and weatherforecast-especially since conditions can change fast out here.</p>
       <article>
@@ -35,33 +38,52 @@
       <h2>Live Chart</h2>
     <div class="chart-container">
      
-        <h3>Buffalo River Water Levels (Last 7 Days)</h3>
-        <canvas id="chartjs-0" height="400"></canvas>
-        <canvas id="chartjs-1" height="400"></canvas>
-        <canvas id="chartjs-2" height="400"></canvas>
-        <canvas id="chartjs-3" height="400"></canvas>
-      </div>    
-      <pre id="output"></pre>
-      <pre id="output1"></pre>
-      <pre id="output2"></pre>
-      <pre id="output3"></pre>
+        <h3>Water Levels Over Times</h3>
+        <p>Water Levels</p>
+        <canvas id="chartjs-0" class="chart-panel" height="400"></canvas>
+        <canvas id="chartjs-1" class="chart-panel" height="400"></canvas>
+        <canvas id="chartjs-2" class="chart-panel" height="400"></canvas>
+        <canvas id="chartjs-3" class="chart-panel" height="400"></canvas>
+        
+      </div>  
+    </section>  
       
-      <div id="tab-2">
-        <section class="form-container">
+   
+    <section class="container">
+      <div>
+        
         <h1>Weather Forecast</h1>
-        <form>
-          <label>Enter City Name
-              <input id="weather-location" type="text" value="Buffalo National River"/>
-          </label>
-          <div class="button-container">
-              <button type="button" onclick="getTemperature()">Display Temp</button>
-              <button type="button" onclick="clearForm()">Clear</button>
-          </div>
-      </form>
+
       <section id="location-info"></section>
       <div id="weather-table-container"></div>
       <canvas id="weather-chart" style="width:100%;max-width:700px"></canvas>
-    </section>
     </div>
+    </section>
+    <section class="cta-section">
+      <h2>Safety Tips</h2>
+      <p>Known the river conditions before you go</p>
+      <p>Levels | Height (FT) | Category | Description</p>
+      <p>------------------------------------------------------</p>
+      <ol>
+        <li> | < 1.2 | Very Low | Dry in spots; heavy dragging. Kayaks only. </li>
+        <li> | 1.3-1.9    | Low but Floatable  | Some dragging, short trips. Best for canoes.</li>
+        <li> | 2.0-2.9    | Moderate           | Good flow, fun rapids. Intermediate skill. </li>
+        <li> | 3.0-4.9    | High (Expert Only) | Fast, dangerous. Advanced skills required</li>
+        <li> | 5.0+       | Flood Level        | Deadly—avoid all paddling.  </li>
+      </ol>
+      <article>
+        <h4>Green = Safe</h4>
+        <p>Enjoy Your padding Experience</p>
+        <h4>Yellow = Caution</h4>
+        <p>Exercise caution, be prepared</p>
+        <h4>Red = Unsafe</h4>
+        <p>Postpone your trip for Safety</p>
+      </article>
+    </section>
+  </section>
+  <footer id="colophon">
+    <h6>Buffalo River Adventure Co | &copy; 2025 </h6>
+</footer>
+   
     <script src="assets/js/weather.js"></script>
   </body>
