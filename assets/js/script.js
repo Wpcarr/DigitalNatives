@@ -1,3 +1,6 @@
+
+
+
 async function GetData() {
     const apiUrl= "https://waterservices.usgs.gov/nwis/iv/?format=json&sites=07055646,07055660,07055680,07055780&indent=on&period=P7D&siteStatus=active&parameterCd=00065"
     /* Make the AJAX call */
@@ -43,7 +46,6 @@ async function GetData() {
                 }
             });
 
-document.getElementById("output").textContent = JSON.stringify({ sitename, sitecode, siteDescription, fLen }, null, 2);
 //site 2
         var dates1 = [];
         var values1 = [];
@@ -75,7 +77,6 @@ document.getElementById("output").textContent = JSON.stringify({ sitename, sitec
                 maintainAspectRatio: true
             }
         });
-        document.getElementById("output1").textContent = JSON.stringify({ sitename1, sitecode1, siteDescription1, fLen1 }, null, 2);
 //site 3
          var dates2 = [];
         var values2 = [];
@@ -107,7 +108,6 @@ document.getElementById("output").textContent = JSON.stringify({ sitename, sitec
                 maintainAspectRatio: true
             }
         });
-        document.getElementById("output2").textContent = JSON.stringify({ sitename2, sitecode2, siteDescription2, fLen2 }, null, 2);
 //site 4
     var dates3 = [];
     var values3 = [];
@@ -139,8 +139,13 @@ document.getElementById("output").textContent = JSON.stringify({ sitename, sitec
             maintainAspectRatio: true
         }
     });
-    document.getElementById("output3").textContent = JSON.stringify({ sitename3, sitecode3, siteDescription3, fLen3 }, null, 2);
         
     }
 
 }
+
+document.querySelectorAll('.chart-panel').forEach(canvas => {
+    canvas.addEventListener('click', () => {
+      canvas.classList.toggle('expanded');
+    });
+  });
