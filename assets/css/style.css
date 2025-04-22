@@ -1,9 +1,47 @@
 /*--------Buffalo River Adventure Co. Style Guide ---- */
 
+/*------Color Scheme 
+
+#E9EBD3 - Light Stone
+EBEBEF - Light blueish stone
+#DAD0B7 - Beige
+#196FAA - Bright med blue
+#BFB304 - Yellow Green
+#8C8303 - Yellow Brown Pea
+#595302 - Greenish Brown
+#592B02 - Redish Brown
+
+-----*/
+
+
+:root {
+    --body-text: #383737;
+    --body-text-inverse: #EBEBEF;
+    --light-bg: #f2f2f2;
+    --dark-bg: #416276;
+    --accent-color:#BFB304;
+    --accent-color-2: #592B02;
+    --dark-bg-opacity: rgba(78, 69, 126, 0.7);
+    --button-color: #3f95ce;
+    --standard-padding: 30px;
+    --min-padding: 10px;
+  }
+
+body {
+    max-width: 375px;
+    border: 3px solid;
+}
+
 #primary-hero {
+<<<<<<< HEAD
     background-image: url(https://klmerritt44.github.io/it-pearl/mini-site/assets/img/canoe-fun.jpg);
 }
 
 
 
   
+=======
+    background-image: url(http://wpcarr.github.io/digital-natives/assets/img/canoe-fun.jpg);
+}
+
+>>>>>>> 2a2fd7d5e972afcbcc4cb1b32a4df6a964439b40
