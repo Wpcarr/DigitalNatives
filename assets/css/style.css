@@ -12,7 +12,7 @@
 :root {
     --body-text: #383737;
     --body-text-inverse: #EBEBEF;
-    --light-bg: #fffcfc;
+    --light-bg: #f2f2f2;
     --dark-bg: #416276;
     --cta-button-color:#4b3520;
     --accent-color: #416276;
@@ -42,7 +42,6 @@ body {
     border: 3px solid;
     font-size: 1rem;
     font-family: poppins;
-    background: var(--light-bg);
     margin: 0px;
     padding: 0px;
 }
